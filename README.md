@@ -204,6 +204,6 @@ Using the run function returns the response.
 ## Screen Recording
 Link to the screen recording
 
-https://github.com/dimikara/Optimizing-an-ML-Pipeline-in-Azure
+https://www.youtube.com/watch?v=zn8DdMNb0qs&t=8s
 
 
