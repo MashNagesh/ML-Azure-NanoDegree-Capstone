@@ -154,7 +154,6 @@ max_iter = 50
 3. Using Bayesian Sampling - This would be a cost performance tradeoff since Bayesian sampling since this method picks samples based on how previous samples did, so that new samples improve the primary metric.
 
 ## Model Deployment
-*TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
 Comparing the performances of the Best models from the AutoML Run and the Hyperdrive Run
 
 | Method      | Primary Metric |
@@ -176,7 +175,7 @@ The model chosen for deployment is the Best Childrun from the AUTOML which is th
 Snapshot of Deployed model with the rest API
 ![model_endpoint_healthy](https://user-images.githubusercontent.com/26400438/127417294-0386dbd4-87f8-495b-a545-b6f8ee0bac8c.PNG)
 
-Querying the deployed rest API:
+##### Querying the deployed rest API:
 
 The Consume section in the API provides details on querying the API.Below is the screen shot of steps used in scoring for 100 records in one go
 Using the run function returns the response.
