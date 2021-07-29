@@ -154,6 +154,10 @@ max_iter = 50
 3. Using Bayesian Sampling - This would be a cost performance tradeoff since Bayesian sampling since this method picks samples based on how previous samples did, so that new samples improve the primary metric.
 
 ## Model Deployment
+Best runs from both the models are registered
+
+![model_list](https://user-images.githubusercontent.com/26400438/127418941-5187b1e9-2f67-4cee-9419-8d250b6fed3d.PNG)
+
 Comparing the performances of the Best models from the AutoML Run and the Hyperdrive Run
 
 | Method      | Primary Metric |
