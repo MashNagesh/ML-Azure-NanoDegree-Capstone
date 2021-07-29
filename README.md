@@ -170,8 +170,8 @@ The model chosen for deployment is the Best Childrun from the AUTOML which is th
 #### Steps:
 
 ##### Inference Configuration
-1.Define the Environment
-2.Use Scoring Script(Score.py) and the Saved Environment details (env.yaml) to define the configuration for Inference
+1.Define the Environment(env.yaml)
+2.Use Scoring Script(Score1.py) and the Saved Environment details  to define the configuration for Inference
 
 ##### Deployment Configuration
 3.ACIWebservice spins an instance based on the Specification
@@ -187,6 +187,10 @@ Using the run function returns the response.
     response = aci_service.run(test_data)
 
 ![web_service_test](https://user-images.githubusercontent.com/26400438/127417430-c74555ad-6000-4ba1-a457-2468ae2ca718.PNG)
+
+#### Log of Web Service
+
+![web_service_logs](https://user-images.githubusercontent.com/26400438/127419102-ac6931ff-25f2-4db1-96b6-5b43628d2161.PNG)
 
 ## Screen Recording
 Link to the screen recording
