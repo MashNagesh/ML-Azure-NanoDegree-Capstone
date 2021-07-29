@@ -137,23 +137,29 @@ Below are the results from the HyperDrive model
 ![HyperDrive_Run_Details_Widget_3](https://user-images.githubusercontent.com/26400438/127315262-7d8518e1-990c-4b29-9e15-e87a05ff18c6.PNG)
 
 #### Results from the Best Model 
+
 The best model has an accuracy of 0.85492
 
 ![HD_Best_run_4](https://user-images.githubusercontent.com/26400438/127315588-16203112-9411-4a3f-b30e-2e528e7c46b4.PNG)
 
 #### Parameters of the Best Model
-C = 6.65
-max_iter = 50
+
+1.C = 6.65
+
+2.max_iter = 50
 
 ![HD_model_Save](https://user-images.githubusercontent.com/26400438/127315436-226b6d28-be79-4a38-a88c-ec81fb2b5fb1.PNG)
 
 #### Scope for Improvement
 
 1. Choice of Model - Logistic Regression is the simplest choice among the classification models.The next experiment can be explored with some bagging or boosting algorithms.
+
 2. For the experiment only 2 parameters (C and max_iter) have been sampled.We could try playing with other parameters like the penalty,Multi_class options.
+
 3. Using Bayesian Sampling - This would be a cost performance tradeoff since Bayesian sampling since this method picks samples based on how previous samples did, so that new samples improve the primary metric.
 
 ## Model Deployment
+
 Best runs from both the models are registered
 
 ![model_list](https://user-images.githubusercontent.com/26400438/127418941-5187b1e9-2f67-4cee-9419-8d250b6fed3d.PNG)
@@ -170,10 +176,13 @@ The model chosen for deployment is the Best Childrun from the AUTOML which is th
 #### Steps:
 
 ##### Inference Configuration
+
 1.Define the Environment(env.yaml)
+
 2.Use Scoring Script(Score1.py) and the Saved Environment details  to define the configuration for Inference
 
 ##### Deployment Configuration
+
 3.ACIWebservice spins an instance based on the Specification
 
 Snapshot of Deployed model with the rest API
