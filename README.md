@@ -129,6 +129,10 @@ Below are the results from the HyperDrive model
 #### Run Details Widget - Model Running
 ![HyperDrive_Run_Details_Widget_2](https://user-images.githubusercontent.com/26400438/127315201-2d719767-2186-46ef-91ef-a4e4b4249fc7.PNG)
 
+#### Capturing the Logs
+![Metric_log](https://user-images.githubusercontent.com/26400438/127416342-7b433175-b985-4701-b8ee-720eb87249be.PNG)
+
+
 #### Run Details Widget - Model completion
 ![HyperDrive_Run_Details_Widget_3](https://user-images.githubusercontent.com/26400438/127315262-7d8518e1-990c-4b29-9e15-e87a05ff18c6.PNG)
 
@@ -143,18 +147,47 @@ max_iter = 50
 
 ![HD_model_Save](https://user-images.githubusercontent.com/26400438/127315436-226b6d28-be79-4a38-a88c-ec81fb2b5fb1.PNG)
 
-*TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
+#### Scope for Improvement
 
-*TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
+1. Choice of Model - Logistic Regression is the simplest choice among the classification models.The next experiment can be explored with some bagging or boosting algorithms.
+2. For the experiment only 2 parameters (C and max_iter) have been sampled.We could try playing with other parameters like the penalty,Multi_class options.
+3. Using Bayesian Sampling - This would be a cost performance tradeoff since Bayesian sampling since this method picks samples based on how previous samples did, so that new samples improve the primary metric.
 
 ## Model Deployment
 *TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
+Comparing the performances of the Best models from the AutoML Run and the Hyperdrive Run
+
+| Method      | Primary Metric |
+| ----------- |--------------- |
+| AutoML      |0.946           |
+| HyperDrive  |0.854           |
+
+The model chosen for deployment is the Best Childrun from the AUTOML which is the Voting Ensemble model and is deployed as ACI Webservice.When we deploy a model as an ACIWebService in Azure Machine Learning Service, we do not need to specify any deployment_target but we need to provide the Environment details (file: env.yaml)
+
+#### Steps:
+
+##### Inference Configuration
+1.Define the Environment
+2.Use Scoring Script(Score.py) and the Saved Environment details (env.yaml) to define the configuration for Inference
+
+##### Deployment Configuration
+3.ACIWebservice spins an instance based on the Specification
+
+Snapshot of Deployed model with the rest API
+![model_endpoint_healthy](https://user-images.githubusercontent.com/26400438/127417294-0386dbd4-87f8-495b-a545-b6f8ee0bac8c.PNG)
+
+Querying the deployed rest API:
+
+The Consume section in the API provides details on querying the API.Below is the screen shot of steps used in scoring for 100 records in one go
+Using the run function returns the response.
+
+    response = aci_service.run(test_data)
+
+![web_service_test](https://user-images.githubusercontent.com/26400438/127417430-c74555ad-6000-4ba1-a457-2468ae2ca718.PNG)
 
 ## Screen Recording
-*TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
-- A working model
-- Demo of the deployed  model
-- Demo of a sample request sent to the endpoint and its response
+Link to the screen recording
 
-## Standout Suggestions
-*TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
+https://github.com/dimikara/Optimizing-an-ML-Pipeline-in-Azure
+
+
